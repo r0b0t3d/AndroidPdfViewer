@@ -92,7 +92,7 @@ import java.util.List;
  * using {@link #load(DocumentSource, String, int[])}. In this
  * particular case, a userPage of 5 can refer to a documentPage of 17.
  */
-public abstract class PDFView extends RelativeLayout {
+public class PDFView extends RelativeLayout {
 
     private static final String TAG = PDFView.class.getSimpleName();
 
@@ -315,7 +315,10 @@ public abstract class PDFView extends RelativeLayout {
         setWillNotDraw(false);
     }
 
-    public Config getPdfiumCoreConfig() {
+    /**
+     * Method to be override to customize pdfiumCore's config for subclass
+     */
+    protected Config getPdfiumCoreConfig() {
         return new Config();
     }
 
